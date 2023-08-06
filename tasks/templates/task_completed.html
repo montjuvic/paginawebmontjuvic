@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<h1>Task' Enlisted</h1>
+
+<ul>
+    {% for task in tasks %}
+    <li> 
+        
+        {% if task.important == True %}
+        <h1>{{task.titulo}}</h1>
+        {% else %}
+        <h3>{{task.titulo}}</h3>
+        {% endif %}
+            
+        <p>{{task.description}}</p>
+        <p>{{task.user.username}}</p>
+        <p>{{task.datecompleted}}</p>
+        <p>{{task.important}}</p>
+          
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+{% endblock %}
